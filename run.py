@@ -1,7 +1,7 @@
 from json import load
 
-followers = load(open("./followers_1.json"))
-following = load(open("./following.json"))
+followers = load(open("./Test_data/followers_1.json"))
+following = load(open("./Test_data/following.json"))
 following = following["relationships_following"]
 
 followers_data = []
