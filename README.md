@@ -7,4 +7,4 @@ Small project on getting data related to following and follers
 4. than, run `python3 run.py`
 5. result, you will get `not_following.txt` and `u_not_following.txt` file where you get your all answers to you questions
 
-location for `followers_1.json` & `following.json` is `<instagram-account-folder/connections/followers_and_following>`
+location for `followers_1.json` & `following.json` is <br> `<instagram-account-folder/connections/followers_and_following>`
