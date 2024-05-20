@@ -94,13 +94,6 @@ def handle_following(blo):
           lst.append(i["string_list_data"][0]["value"])
      return lst
 
-# def test():
-#      a = open_data()
-#      handle_following(a)
-
-# def load_data():
-#      pass
-
 def save_in_file(filename:str,lst:list):
      with open(file=filename,mode="x") as f:
           for i in lst:
