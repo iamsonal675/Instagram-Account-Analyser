@@ -105,7 +105,7 @@ def interactive_shell():
           d_ = open_data()
           following_data = handle_following(d_)
           followers_data = handle_followers(d_)
-          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n0. Exit"))
+          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n0. Exit\n"))
           not_following:list = []
           u_not_following:list = []
           if a == 0:
