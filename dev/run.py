@@ -85,20 +85,46 @@ def handle_followers(blo):
      lst:list = []
      for i in blo:
           lst.append(i["string_list_data"][0]["value"])
-     print(lst)
+     return lst
 
 def handle_following(blo):
      blo = blo[9]["relationships_following"]
      lst:list = []
      for i in blo:
           lst.append(i["string_list_data"][0]["value"])
-     print(lst)
+     return lst
 
-def test():
-     a = open_data()
-     handle_following(a)
+# def test():
+#      a = open_data()
+#      handle_following(a)
 
-def load_data():
-     pass
+# def load_data():
+#      pass
 
-test()
+def save_in_file(filename:str,lst:list):
+     with open(file=filename,mode="x") as f:
+          for i in lst:
+               f.write(f"{str(i)}\n")
+
+def interactive_shell():
+     while True:
+          print("Loading data.......")
+          d_ = open_data()
+          following_data = handle_following(d_)
+          followers_data = handle_followers(d_)
+          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n"))
+          not_following:list = []
+          if a == 1:
+               for i in following_data:
+                    if i in followers_data:
+                         pass
+                    else:
+                         not_following.append(i)
+               print("DONE!")
+          s = str(input("Save file\nEnter filename:"))
+          save_in_file(s,not_following)
+          break
+          
+
+if __name__=="__main__":
+     interactive_shell()
