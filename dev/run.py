@@ -9,6 +9,8 @@ def open_data():
      recently_unfollow_account = load(open("./data/connections/followers_and_following/recently_unfollowed_accounts.json"))
      removed_suggestions = load(open("./data/connections/followers_and_following/removed_suggestions.json"))
      restricted_accounts = load(open("./data/connections/followers_and_following/restricted_accounts.json"))
+     followers_1 = load(open("./data/connections/followers_and_following/followers_1.json"))
+     following = load(open("./data/connections/followers_and_following/following.json"))
      return [
           blocked_account,
           close_friends,
@@ -17,7 +19,9 @@ def open_data():
           recently_follow_requests,
           recently_unfollow_account,
           removed_suggestions,
-          restricted_accounts
+          restricted_accounts,
+          followers_1,
+          following
      ]
 
 def handle_blocked_accounts(blo):
@@ -75,10 +79,24 @@ def handle_restricted_accounts(blo):
      for i in blo:
           lst.append(i["string_list_data"][0]["value"])
      print(lst)
-     
+
+def handle_followers(blo):
+     blo = blo[8]
+     lst:list = []
+     for i in blo:
+          lst.append(i["string_list_data"][0]["value"])
+     print(lst)
+
+def handle_following(blo):
+     blo = blo[9]["relationships_following"]
+     lst:list = []
+     for i in blo:
+          lst.append(i["string_list_data"][0]["value"])
+     print(lst)
+
 def test():
      a = open_data()
-     handle_removed_suggestions(a)
+     handle_following(a)
 
 def load_data():
      pass
