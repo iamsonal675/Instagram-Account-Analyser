@@ -105,8 +105,11 @@ def interactive_shell():
           d_ = open_data()
           following_data = handle_following(d_)
           followers_data = handle_followers(d_)
-          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n"))
+          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n0. Exit"))
           not_following:list = []
+          u_not_following:list = []
+          if a == 0:
+               break
           if a == 1:
                for i in following_data:
                     if i in followers_data:
@@ -114,9 +117,17 @@ def interactive_shell():
                     else:
                          not_following.append(i)
                print("DONE!")
-          s = str(input("Save file\nEnter filename:"))
-          save_in_file(s,not_following)
-          break
+               s = str(input("Save file\nEnter filename:"))
+               save_in_file(s,not_following)
+          if a == 2:
+               for i in followers_data:
+                    if i in following_data:
+                         pass
+                    else:
+                         u_not_following.append(i)
+               print("DONE!")
+               s = str(input("Save file\nEnter filename:"))
+               save_in_file(s,u_not_following)
           
 
 if __name__=="__main__":
