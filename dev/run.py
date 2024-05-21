@@ -50,7 +50,7 @@ def handle_pending_follow_requests(blo):
      lst:list = []
      for i in blo:
           lst.append(i["string_list_data"][0]["value"])
-     print(lst)
+     return lst
 
 def handle_recently_follow_requests(blo):
      blo = blo[4]["relationships_permanent_follow_requests"]
@@ -105,9 +105,11 @@ def interactive_shell():
           d_ = open_data()
           following_data = handle_following(d_)
           followers_data = handle_followers(d_)
-          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n0. Exit\n"))
+          follow_requests_data = handle_pending_follow_requests(d_)
+          a = int(input("Enter your choice:\n1. Get Account not following you\n2. Get Account you not following\n3. Get Follow Requests\n0. Exit\n"))
           not_following:list = []
           u_not_following:list = []
+          follow_requests:list = []
           if a == 0:
                break
           if a == 1:
@@ -128,6 +130,12 @@ def interactive_shell():
                print("DONE!")
                s = str(input("Save file\nEnter filename:"))
                save_in_file(s,u_not_following)
+          if a == 3:
+               for i in follow_requests_data:
+                    follow_requests.append(i)
+               print("Done")
+               s = str(input("Save file\nEnter filename:"))
+               save_in_file(s,follow_requests)
           
 
 if __name__=="__main__":
