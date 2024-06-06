@@ -1,0 +1,39 @@
+[
+      {
+            "relationships_close_friends": [
+                  {
+                        "title": "",
+                        "media_list_data": [],
+                        "string_list_data": [
+                              {
+                                    "href": "https://www.instagram.com/MichaelRobert",
+                                    "value": "MichaelRobert",
+                                    "timestamp": 1717670334
+                              }
+                        ]
+                  },
+                  {
+                        "title": "",
+                        "media_list_data": [],
+                        "string_list_data": [
+                              {
+                                    "href": "https://www.instagram.com/AmandaKatelyn",
+                                    "value": "AmandaKatelyn",
+                                    "timestamp": 1717670277
+                              }
+                        ]
+                  },
+                  {
+                        "title": "",
+                        "media_list_data": [],
+                        "string_list_data": [
+                              {
+                                    "href": "https://www.instagram.com/SteveJulia",
+                                    "value": "SteveJulia",
+                                    "timestamp": 1717670314
+                              }
+                        ]
+                  }
+            ]
+      }
+]
